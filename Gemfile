@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.1.0'
 # (crm) use devise for authentication
 gem 'devise'
 
+# (crm) install bower-rails to manage bootstrap dependencies
+gem 'bower-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
