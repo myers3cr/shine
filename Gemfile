@@ -20,6 +20,9 @@ gem 'devise'
 # (crm) install bower-rails to manage bootstrap dependencies
 gem 'bower-rails'
 
+# (crm) install faker to generate db records
+gem 'faker'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
