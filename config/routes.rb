@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
+  get "angular_test", to: "angular_test#index"
   resources :customers, only: [ :index ]
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
