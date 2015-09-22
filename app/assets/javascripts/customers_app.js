@@ -1,34 +1,34 @@
 var app = angular.module('customers',[]); 
 
 app.controller("CustomerSearchController", [ 
-          '$scope',                          
-  function($scope) {                         
+          '$scope','$http',
+  function($scope , $http) {
+
+    var page = 0;                       
     $scope.customers = [];
+
     $scope.search = function(searchTerm) {   
-      $scope.customers = [
-        {
-          "first_name" : "C.R.",
-          "last_name" : "Myers",
-          "email" : "myers3.cr@gmail.com",
-          "username" : "myers3cr",
-          "created_at" : "2015-06-12",
-        },
-        {
-          "first_name" : "Joanne",
-          "last_name" : "Redmore",
-          "email" : "jredmore4@gmail.com",
-          "username" : "jsr",
-          "created_at" : "2015-12-04",
-        },
-        {
-          "first_name" : "Harvey",
-          "last_name" : "Foonman",
-          "email" : "hxf@example.com",
-          "username" : "hfoonman",
-          "created_at" : "2015-07-04",
-        }
-      ]
-      
+      $http.get("/customers.json",  
+        { "params": { "keywords" : searchTerm, "page" : page } }
+      ).success(
+        function(data,status,headers,config) { 
+          $scope.customers = data;
+      }).error(
+        function(data,status,headers,config) {
+          alert("Shit happened: " + status);
+      });
     }
+
+    $scope.previousPage = function() {
+      if (page > 0) {
+        page = page - 1;
+        $scope.search($scope.keywords);
+      }
+    }
+    $scope.nextPage = function() {
+      page = page + 1;
+      $scope.search($scope.keywords);
+    }
+
   }
 ]);
