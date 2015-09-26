@@ -44,6 +44,10 @@ group :development, :test do
   gem 'byebug'
   # (crm) use rspec for testing
   gem 'rspec-rails'
+  # (crm) use poltergeist for phantomjs interface
+  gem 'poltergeist'
+  # (crm) use database cleaner
+  gem 'database_cleaner'
 end
 
 group :development do
