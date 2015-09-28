@@ -48,6 +48,8 @@ group :development, :test do
   gem 'poltergeist'
   # (crm) use database cleaner
   gem 'database_cleaner'
+  # (crm) user teaspoon/jasmine for js unit tests
+  gem 'teaspoon-jasmine'
 end
 
 group :development do
