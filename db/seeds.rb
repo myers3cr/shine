@@ -12,3 +12,9 @@
     username: "#{Faker::Internet.user_name}#{i}",
     email: "#{Faker::Internet.user_name}#{i}@#{Faker::Internet.domain_name}")
 end
+Customer.create!(
+  first_name: "Harvey",
+  last_name: "Foonman",
+  username: "thedude",
+  email: "harvey.foonman@example.com"
+)
